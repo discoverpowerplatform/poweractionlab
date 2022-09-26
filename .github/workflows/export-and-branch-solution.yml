@@ -54,7 +54,7 @@ jobs:
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
         environment-url: ${{env.https://orgfdc1af99.crm4.dynamics.com}}
-        app-id: ${{env.CLIENT_ID}}
+        app-id: ${{env.0e9fb919-13fb-42b9-ae3a-fdc8fd080ca1}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.ec2c19e4-a62f-4428-9565-1f19483aca4c}}
         solution-name: ${{ github.event.inputs.solution_name }}
