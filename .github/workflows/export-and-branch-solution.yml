@@ -25,9 +25,9 @@ on:
        default: solutions/
 env:
 #edit your values here
-  ENVIRONMENT_URL: '<ENVIRONMENTURL>'
-  CLIENT_ID: '<APPID>'
-  TENANT_ID: '<TENANT ID>'
+  ENVIRONMENT_URL: 'https://orgfdc1af99.crm4.dynamics.com'
+  CLIENT_ID: '0e9fb919-13fb-42b9-ae3a-fdc8fd080ca1'
+  TENANT_ID: 'ec2c19e4-a62f-4428-9565-1f19483aca4c'
 
 jobs:
   export-from-dev:
@@ -45,7 +45,7 @@ jobs:
       uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
-        app-id: ${{env.0e9fb919-13fb-42b9-ae3a-fdc8fd080ca1}}
+        app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
 
@@ -53,10 +53,10 @@ jobs:
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
-        environment-url: ${{env.https://orgfdc1af99.crm4.dynamics.com}}
-        app-id: ${{env.0e9fb919-13fb-42b9-ae3a-fdc8fd080ca1}}
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.ec2c19e4-a62f-4428-9565-1f19483aca4c}}
+        tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
 
